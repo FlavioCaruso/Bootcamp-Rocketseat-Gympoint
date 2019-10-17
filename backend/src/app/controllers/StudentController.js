@@ -8,17 +8,16 @@ class StudentController {
     if (studentExists) {
       return res.status(400).json({ error: 'Student already exists.' });
     }
-    const { id, name, email, idade, peso, altura } = await Student.create(
+    const { id, name, email, age, weight, height } = await Student.create(
       req.body
     );
-
     return res.json({
       id,
       name,
       email,
-      idade,
-      peso,
-      altura,
+      age,
+      weight,
+      height,
     });
   }
 }
